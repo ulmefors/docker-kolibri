@@ -11,6 +11,8 @@ jobs:
       - image: circleci/golang:1.15.6
     steps:
       - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
       - run:
           name: Build Container
           command: docker build --tag=ulmefors/kolibri -f Dockerfile .
