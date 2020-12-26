@@ -13,4 +13,5 @@ jobs:
       - checkout
       - run:
           name: Build Container
-          command: docker build --tag=ulmefors/kolibri -f Dockerfile
+          command: docker build --tag=ulmefors/kolibri -f Dockerfile .
+
