@@ -8,7 +8,5 @@ RUN dpkg -i kolibri.deb
 
 EXPOSE 8080
 
-COPY ./start.sh /usr/local/bin/
-RUN ["chmod", "+x", "/usr/local/bin/start.sh"]
-ENTRYPOINT ["/usr/local/bin/start.sh"]
+ENTRYPOINT su kolibri -c "kolibri start --foreground"
 

@@ -2,7 +2,6 @@
 NAME=kolibri
 TAG=kolibri
 PORT=8080
-IMAGE=$(shell docker ps -aqf name=${NAME})
 
 rebuild: stop remove build
 
@@ -13,11 +12,11 @@ run:
 	docker run -d -p ${PORT}:${PORT} --name ${NAME} ${TAG}
 
 start:
-	docker start ${IMAGE} | true
+	docker start ${NAME} | true
 
 stop:
-	docker stop ${IMAGE} | true
+	docker stop ${NAME} | true
 
 remove:
-	docker rm ${IMAGE} | true
+	docker rm ${NAME} | true
 
