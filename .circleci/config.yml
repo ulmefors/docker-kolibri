@@ -12,7 +12,7 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker:
-          docker_layer_caching: true
+          version: 19.03.13   
       - run:
           name: Build Container
           command: docker build --tag=ulmefors/kolibri -f Dockerfile .
