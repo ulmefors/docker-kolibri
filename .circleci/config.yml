@@ -1,0 +1,16 @@
+version: 2.1
+
+workflows:
+  build:
+    jobs:
+      - build
+
+jobs:
+  build:
+    docker:
+      - image: circleci/golang:1.15.6
+    steps:
+      - checkout
+      - run:
+          name: Build Container
+          command: docker build --tag=ulmefors/kolibri -f Dockerfile
