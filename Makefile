@@ -1,6 +1,6 @@
 .PHONY: build run stop remove
 NAME=kolibri
-TAG=kolibri
+TAG=ulmefors/kolibri
 PORT=8080
 
 rebuild: stop remove build
