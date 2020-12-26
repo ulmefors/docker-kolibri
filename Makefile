@@ -12,6 +12,9 @@ build:
 run:
 	docker run -d -p ${PORT}:${PORT} --name ${NAME} ${TAG}
 
+start:
+	docker start ${IMAGE} | true
+
 stop:
 	docker stop ${IMAGE} | true
 
