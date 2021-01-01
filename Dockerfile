@@ -1,12 +1,18 @@
-FROM debian:stable-slim
-LABEL maintainer Marcus Ulmefors <marcus@ulmefors.com>
+FROM ubuntu:groovy
+LABEL maintainer="marcus@ulmefors.com"
 
-RUN apt update
-RUN apt install bash iproute2 curl python3 python3-pkg-resources -y
-RUN curl -L https://learningequality.org/r/kolibri-deb-latest --output kolibri.deb
-RUN dpkg -i kolibri.deb
+ARG DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update
+RUN apt-get install apt-utils -y
+RUN apt-get install software-properties-common iproute2 -y
+RUN add-apt-repository ppa:learningequality/kolibri
+RUN apt-get update
+RUN apt-get install kolibri -y
+
+RUN su kolibri -c "kolibri start"  # Create kolibri dirs
 
 EXPOSE 8080
 
-ENTRYPOINT su kolibri -c "kolibri start --foreground"
+CMD su kolibri -c "kolibri start --foreground"
 

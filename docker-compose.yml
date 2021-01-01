@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  kolibri:
+    image: ulmefors/kolibri
+    container_name: kolibri
+    volumes:
+      - kolibri_data:/var/kolibri/.kolibri
+    ports:
+      - 8080:8080
+    restart: always
+
+volumes:
+  kolibri_data:
+    name: kolibri_data
+
