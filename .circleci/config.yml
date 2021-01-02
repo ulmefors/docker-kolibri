@@ -3,10 +3,28 @@ version: 2.1
 workflows:
   build_and_push:
     jobs:
-      - build_and_push
+      - build
+      - push:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - master
 
 jobs:
-  build_and_push:
+  build:
+    docker:
+      - image: circleci/golang:1.15.6
+    steps:
+      - checkout
+      - setup_remote_docker:
+          version: 19.03.13   
+      - run:
+          name: Build Container
+          command: |
+            docker build --tag=ulmefors/kolibri:latest -f Dockerfile .
+  push:
     docker:
       - image: circleci/golang:1.15.6
     steps:
