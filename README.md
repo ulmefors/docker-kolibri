@@ -23,3 +23,7 @@ Stop containers, and optionally remove volume
 $ docker-compose down [--volume]
 ```
 
+## Todo
+
+1. Separate circleci jobs. Build when pushing to origin. Push image to dockerhub on merge to master.
+
