@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/ulmefors/docker-kolibri.svg?style=svg)](https://circleci.com/gh/ulmefors/docker-kolibri)
 
-[![](https://images.microbadger.com/badges/image/ulmefors/docker-kolibri.svg)](https://microbadger.com/images/ulmefors/docker-kolibri)
+[![](https://images.microbadger.com/badges/image/ulmefors/kolibri.svg)](https://microbadger.com/images/ulmefors/kolibri)
 
 Run [kolibri](https://learningequality.org/kolibri) in docker.
 
