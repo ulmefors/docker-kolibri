@@ -6,7 +6,7 @@ workflows:
       - build
 
 jobs:
-  build:
+  build_and_push:
     docker:
       - image: circleci/golang:1.15.6
     steps:
