@@ -14,9 +14,9 @@ jobs:
       - setup_remote_docker:
           version: 19.03.13   
       - run:
-          name: Build Container
-          command: docker build --tag=ulmefors/kolibri -f Dockerfile .
-      - run:
-          name: Push Container
-          command: docker push ulmefors/kolibri:latest
+          name: Build and Push Container
+          command: |
+            echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USER --password-stdin
+            docker build --tag=ulmefors/kolibri:latest -f Dockerfile .
+            docker push ulmefors/kolibri:latest
 
