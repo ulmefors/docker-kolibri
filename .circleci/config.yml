@@ -1,9 +1,9 @@
 version: 2.1
 
 workflows:
-  build:
+  build_and_push:
     jobs:
-      - build
+      - build_and_push
 
 jobs:
   build_and_push:
