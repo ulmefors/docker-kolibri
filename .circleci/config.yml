@@ -16,7 +16,7 @@ jobs:
       - run:
           name: Build and Push Container
           command: |
-            echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USER --password-stdin
+            docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD 
             docker build --tag=ulmefors/kolibri:latest -f Dockerfile .
             docker push ulmefors/kolibri:latest
 
