@@ -16,4 +16,7 @@ jobs:
       - run:
           name: Build Container
           command: docker build --tag=ulmefors/kolibri -f Dockerfile .
+      - run:
+          name: Push Container
+          command: docker push ulmefors/kolibri:latest
 
