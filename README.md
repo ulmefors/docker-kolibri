@@ -1,4 +1,6 @@
-# kolibri-docker
+# docker-kolibri
+
+[![CircleCI](https://circleci.com/gh/ulmefors/docker-kolibri.svg?style=svg)](https://circleci.com/gh/ulmefors/docker-kolibri)
 
 Run [kolibri](https://learningequality.org/kolibri) in docker.
 
