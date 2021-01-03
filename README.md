@@ -2,8 +2,6 @@
 
 [![CircleCI](https://circleci.com/gh/ulmefors/docker-kolibri.svg?style=svg)](https://circleci.com/gh/ulmefors/docker-kolibri)
 
-[![](https://images.microbadger.com/badges/image/ulmefors/docker-kolibri.svg)](https://microbadger.com/images/ulmefors/kolibri)
-
 Run [kolibri](https://learningequality.org/kolibri) in docker.
 
 ## Run
@@ -24,6 +22,4 @@ $ docker-compose down [--volume]
 ```
 
 ## Todo
-
-1. Separate circleci jobs. Build when pushing to origin. Push image to dockerhub on merge to master.
 
