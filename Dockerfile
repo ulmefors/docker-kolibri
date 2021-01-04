@@ -1,4 +1,10 @@
 FROM ubuntu:groovy
+
+ARG BUILD_DATE
+ARG VCS_REF
+LABEL org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.vcs-url="https://github.com/ulmefors/kolibri.git" \
+      org.label-schema.vcs-ref=$VCS_REF
 LABEL maintainer="marcus@ulmefors.com"
 
 ARG DEBIAN_FRONTEND=noninteractive

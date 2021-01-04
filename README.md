@@ -1,8 +1,21 @@
-# docker-kolibri
+# kolibri
 
-[![CircleCI](https://circleci.com/gh/ulmefors/docker-kolibri.svg?style=svg)](https://circleci.com/gh/ulmefors/docker-kolibri)
+[![CircleCI](https://circleci.com/gh/ulmefors/kolibri.svg?style=svg)](https://circleci.com/gh/ulmefors/kolibri)
+
+[![Image](https://images.microbadger.com/badges/image/ulmefors/kolibri.svg)](https://microbadger.com/images/ulmefors/kolibri)
 
 Run [kolibri](https://learningequality.org/kolibri) in docker.
+
+## Install
+
+### Docker
+
+```shell
+$ curl -sSL https://get.docker.com | sh  # Install docker
+$ sudo usermod -aG docker $USER  # Add user to docker group
+```
+
+> **NOTE:** User must do logout/login cycle to update group memberships.
 
 ## Run
 
