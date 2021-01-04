@@ -4,7 +4,7 @@
 
 [![Image](https://images.microbadger.com/badges/image/ulmefors/kolibri.svg)](https://microbadger.com/images/ulmefors/kolibri)
 
-Run [kolibri](https://learningequality.org/kolibri) in docker.
+Run [kolibri](https://learningequality.org/kolibri) in docker. See [kolibri repository](https://github.com/learningequality/kolibri) for details on application.
 
 ## Install
 
