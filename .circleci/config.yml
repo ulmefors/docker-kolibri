@@ -10,7 +10,7 @@ workflows:
                 - master
   v0.14.5:
     jobs:
-      - build_and_push_v0.14.5:
+      - build_and_push_v0_14_5:
           filters:
             branches:
               only:
@@ -31,7 +31,7 @@ jobs:
             make build_latest
             docker push ulmefors/kolibri:latest
 
-  build_and_push_v0.14.5:
+  build_and_push_v0_14_5:
     docker:
       - image: circleci/golang:1.15.6
     steps:
