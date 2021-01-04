@@ -1,19 +1,23 @@
 version: 2.1
 
 workflows:
-  build_and_push:
+  latest:
     jobs:
-      - build
-      - push:
-          requires:
-            - build
+      - build_and_push_latest:
           filters:
             branches:
               only:
                 - master
+  v0.14.5:
+    jobs:
+      - build_and_push_v0.14.5:
+          filters:
+            branches:
+              only:
+                - v0.14.5
 
 jobs:
-  build:
+  build_and_push_latest:
     docker:
       - image: circleci/golang:1.15.6
     steps:
@@ -23,8 +27,11 @@ jobs:
       - run:
           name: Build Container
           command: |
-            docker build --tag=ulmefors/kolibri:latest -f Dockerfile .
-  push:
+            echo "$DOCKERHUB_PASSWORD" | docker login -u $DOCKERHUB_USER --password-stdin
+            make build_latest
+            docker push ulmefors/kolibri:latest
+
+  build_and_push_v0.14.5:
     docker:
       - image: circleci/golang:1.15.6
     steps:
@@ -35,9 +42,6 @@ jobs:
           name: Build and Push Container
           command: |
             echo "$DOCKERHUB_PASSWORD" | docker login -u $DOCKERHUB_USER --password-stdin
-            docker build \
-              --build-arg VCS_REF=`git rev-parse --short HEAD` \
-              --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
-              -t ulmefors/kolibri:latest -f Dockerfile .
-            docker push ulmefors/kolibri:latest
+            make build_tag KOLIBRI_TAG=0.14.5
+            docker push ulmefors/kolibri:0.14.5
 
